@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Ghibli Explorer</title>
+  <link rel="stylesheet" href="style.css">
+  <header class="header-practica">
+        <a href="../../index.html" class="btn-inicio">⬅ Inicio</a>
+    </header>
+</head>
+<body>
+
+<header>
+  <h1>Studio Ghibli <span>Explorer</span></h1>
+  <p>Consumo de API pública - Películas</p>
+</header>
+
+<main>
+
+  <section id="films-section">
+    <h2>Películas</h2>
+    <div id="films" class="grid"></div>
+  </section>
+
+</main>
+
+<div id="modal" class="modal hidden">
+  <div class="modal-content">
+    <button class="close" onclick="closeFilm()">✖</button>
+    <h2 id="detail-title"></h2>
+    <img id="detail-image">
+    <p><strong>Director:</strong> <span id="detail-director"></span></p>
+    <p><strong>Productor:</strong> <span id="detail-producer"></span></p>
+    <p><strong>Año:</strong> <span id="detail-year"></span></p>
+    <p id="detail-description"></p>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Artículo</title>
+    <link rel="stylesheet" href="styleAdd.css">
+</head>
+<body class="form-page">
+
+<div class="form-container">
+    <h2 id="lblTitulo"></h2>
+
+    <form id="frmArticulo">
+        <input type="text" id="txtNombre" placeholder="Nombre del producto" required>
+        <input type="number" id="txtCosto" placeholder="Precio" required>
+
+        <button type="submit" id="btnAccion"></button>
+        <a href="index.html" class="cancel-btn">Cancelar</a>
+    </form>
+</div>
+
+<script>
+const API_ENDPOINT = "https://dummyjson.com/products";
+
+const parametros = new URLSearchParams(window.location.search);
+const modoFormulario = parametros.get("mode");
+const idArticulo = parametros.get("id");
+
+const lblTitulo = document.getElementById("lblTitulo");
+const txtNombre = document.getElementById("txtNombre");
+const txtCosto = document.getElementById("txtCosto");
+const btnAccion = document.getElementById("btnAccion");
+const frmArticulo = document.getElementById("frmArticulo");
+
+// MODO NUEVO
+if (modoFormulario === "new") {
+    lblTitulo.textContent = "Registrar nuevo artículo";
+    btnAccion.textContent = "Guardar producto";
+}
+
+// MODO EDICIÓN
+if (modoFormulario === "edit") {
+    lblTitulo.textContent = "Modificar artículo";
+    btnAccion.textContent = "Actualizar información";
+
+    fetch(`${API_ENDPOINT}/${idArticulo}`)
+        .then(resp => resp.json())
+        .then(info => {
+            txtNombre.value = info.title;
+            txtCosto.value = info.price;
+        });
+}
+
+// ENVÍO FORMULARIO
+frmArticulo.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    if (modoFormulario === "new") {
+        await fetch(`${API_ENDPOINT}/add`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                title: txtNombre.value,
+                price: Number(txtCosto.value)
+            })
+        });
+
+        alert("✅ Artículo registrado correctamente");
+    }
+
+    if (modoFormulario === "edit") {
+        await fetch(`${API_ENDPOINT}/${idArticulo}`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                title: txtNombre.value,
+                price: Number(txtCosto.value)
+            })
+        });
+
+        alert("✏️ Artículo actualizado con éxito");
+    }
+
+    window.location.href = "index.html";
+});
+</script>
+
+</body>
+</html>

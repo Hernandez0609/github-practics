@@ -1,0 +1,26 @@
+#map {
+    display: block;
+    margin: auto;
+    border:  2px solid #7898db;
+    border-radius: 15px;
+    height: 50vh;
+    width: 50%;
+}
+
+.header-practica {
+    background-color: #1e293b;
+    padding: 15px 20px;
+}
+
+.btn-inicio {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #2563eb;
+    padding: 8px 14px;
+    border-radius: 6px;
+}
+
+.btn-inicio:hover {
+    background-color: #1d4ed8;
+}

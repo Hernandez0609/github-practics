@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tienda de Productos Piratas</title>
+
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.4.0/uicons-bold-rounded/css/uicons-bold-rounded.css">
+    <link rel="stylesheet" href="style.css">
+    <header class="header-practica">
+        <a href="../../index.html" class="btn-inicio">⬅ Inicio</a>
+    </header>
+</head>
+<body>
+
+<header class="header-bar">
+    <h1><i class="fi fi-br-shopping-cart"></i> Tienda de Productos Piratas</h1>
+
+    <div class="search-box">
+        <input type="text" id="txtBusqueda" placeholder="Buscar artículo">
+        <button id="btnBuscar">🔍</button>
+    </div>
+
+    <a href="add-product.html?mode=new" class="btn-add">➕ Agregar</a>
+</header>
+
+<section class="options-panel">
+    <select id="comboCategorias">
+        <option value="">Todas</option>
+    </select>
+
+    <select id="comboOrden">
+        <option value="">Ordenar</option>
+        <option value="title-asc">Nombre A-Z</option>
+        <option value="title-desc">Nombre Z-A</option>
+        <option value="price-asc">Precio ↑</option>
+        <option value="price-desc">Precio ↓</option>
+    </select>
+</section>
+
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Imagen</th>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Categoría</th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+    <tbody id="tablaDatos"></tbody>
+</table>
+
+<footer class="pager">
+    <button id="btnPrev">◀</button>
+    <span id="lblPagina"></span>
+    <button id="btnNext">▶</button>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

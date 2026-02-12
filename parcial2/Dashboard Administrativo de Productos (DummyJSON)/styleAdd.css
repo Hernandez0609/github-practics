@@ -1,0 +1,84 @@
+/* ===== FORMULARIO ADD / EDIT ===== */
+
+.form-page {
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #FFFFFF);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    background: #FFFFFF;
+    width: 420px;
+    padding: 40px 38px;
+    border-radius: 14px;
+    box-shadow: 0 0 40px rgba(255, 230, 0, 0.35);
+    border: 1px solid #FFF7AE;
+}
+
+.form-container h2 {
+    margin: 0 0 28px 0;
+    text-align: center;
+    font-size: 22px;
+    color: #000000;
+    letter-spacing: 0.5px;
+}
+
+/* INPUTS */
+.form-container input {
+    width: 100%;
+    padding: 14px 12px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    border: 1px solid #1e293b;
+    background: #FFFFFF;
+    color: black;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.form-container input::placeholder {
+    color: #64748b;
+}
+
+.form-container input:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 2px rgba(99,102,241,0.3);
+}
+
+/* BOTÓN PRINCIPAL */
+.form-container button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, #FFE600);
+    color: #020617;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-container button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(34,211,238,0.3);
+}
+
+/* CANCELAR */
+.cancel-btn {
+    display: block;
+    margin-top: 18px;
+    text-align: center;
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s ease;
+}
+
+.cancel-btn:hover {
+    color: #f43f5e;
+}
