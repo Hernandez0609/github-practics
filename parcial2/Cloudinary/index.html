@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER SUPERIOR -->
+    <header class="header-practica">
+        <a href="../../index.html" class="btn-inicio">⬅ Inicio</a>
+    </header>
+
+    <!-- CONTENEDOR PARA CENTRAR -->
+    <div class="contenedor">
+
+        <div class="card">
+
+            <h1>Upload Studio</h1>
+            <p class="subtitle">Sube tu imagen aquí...</p>
+
+            <div id="uploadBox" class="upload-box">
+                <input type="file" id="fileinput" accept="image/*">
+                <p>Haz clic aquí para seleccionar una imagen</p>
+            </div>
+
+            <img id="preview">
+
+            <button id="btnSubir" class="primary-btn">Procesar Imagen</button>
+
+            <div id="resultSection">
+                <h3>Resultado Final</h3>
+                <img id="resultado">
+                <button id="btnOtra" class="secondary-btn">Subir Nueva Imagen</button>
+            </div>
+
+            <p id="estado"></p>
+
+        </div>
+
+    </div>
+
+    <script src="main.js"></script>
+
+</body>
+</html>
